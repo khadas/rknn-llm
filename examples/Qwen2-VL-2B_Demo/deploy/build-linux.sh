@@ -1,7 +1,7 @@
 rm -rf build
 mkdir build && cd build
 
-GCC_COMPILER=~/opts/gcc-arm-10.2-2020.11-x86_64-aarch64-none-linux-gnu
+GCC_COMPILER_PATH=aarch64-linux-gnu
 cmake .. -DCMAKE_CXX_COMPILER=${GCC_COMPILER}/bin/aarch64-none-linux-gnu-g++  \
         -DCMAKE_C_COMPILER=${GCC_COMPILER}/bin/aarch64-none-linux-gnu-gcc \
         -DCMAKE_BUILD_TYPE=Release \

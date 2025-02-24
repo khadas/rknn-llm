@@ -4,7 +4,7 @@ if [[ -z ${BUILD_TYPE} ]];then
     BUILD_TYPE=Release
 fi
 
-GCC_COMPILER_PATH=~/opts/gcc-arm-10.2-2020.11-x86_64-aarch64-none-linux-gnu/bin/aarch64-none-linux-gnu
+GCC_COMPILER_PATH=aarch64-linux-gnu
 C_COMPILER=${GCC_COMPILER_PATH}-gcc
 CXX_COMPILER=${GCC_COMPILER_PATH}-g++
 STRIP_COMPILER=${GCC_COMPILER_PATH}-strip

@@ -1,3 +1,4 @@
+#include <cstdint>
 #ifndef _RKLLM_H_
 #define _RKLLM_H_
 
