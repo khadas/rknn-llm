@@ -34,7 +34,7 @@ void exit_handler(int signal)
     if (llmHandle != nullptr)
     {
         {
-            cout << "程序即将退出" << endl;
+            cout << "Exiting program..." << endl;
             LLMHandle _tmp = llmHandle;
             llmHandle = nullptr;
             rkllm_destroy(_tmp);
@@ -74,7 +74,7 @@ int main(int argc, char **argv)
     signal(SIGINT, exit_handler);
     printf("rkllm init start\n");
 
-    //设置参数及初始化
+    // Set parameters and initialize
     RKLLMParam param = rkllm_createDefaultParam();
     param.model_path = argv[1];
     param.top_k = 1;
@@ -97,12 +97,10 @@ int main(int argc, char **argv)
     printf("%s: Model loaded in %8.2f ms\n", __func__, load_time.count() / 1000.0);
 
     vector<string> pre_input;
-    pre_input.push_back("把下面的现代文翻译成文言文: 到了春风和煦，阳光明媚的时候，湖面平静，没有惊涛骇浪，天色湖光相连，一片碧绿，广阔无际；沙洲上的鸥鸟，时而飞翔，时而停歇，美丽的鱼游来游去，岸上与小洲上的花草，青翠欲滴。");
-    pre_input.push_back("以咏梅为题目，帮我写一首古诗，要求包含梅花、白雪等元素。");
-    pre_input.push_back("上联: 江边惯看千帆过");
-    pre_input.push_back("把这句话翻译成中文: Knowledge can be acquired from many sources. These include books, teachers and practical experience, and each has its own advantages. The knowledge we gain from books and formal education enables us to learn about things that we have no opportunity to experience in daily life. We can also develop our analytical skills and learn how to view and interpret the world around us in different ways. Furthermore, we can learn from the past by reading books. In this way, we won't repeat the mistakes of others and can build on their achievements.");
-    pre_input.push_back("把这句话翻译成英文: RK3588是新一代高端处理器，具有高算力、低功耗、超强多媒体、丰富数据接口等特点");
-    cout << "\n**********************可输入以下问题对应序号获取回答/或自定义输入********************\n"
+    pre_input.push_back("Introduce the first industrial revolution");
+    pre_input.push_back("Translate the sentence to Chinese: Knowledge can be acquired from many sources. These include books, teachers and practical experience, and each has its own advantages. The knowledge we gain from books and formal education enables us to learn about things that we have no opportunity to experience in daily life. We can also develop our analytical skills and learn how to view and interpret the world around us in different ways. Furthermore, we can learn from the past by reading books. In this way, we won't repeat the mistakes of others and can build on their achievements.");
+    pre_input.push_back("Translate the sentence to English: RK3588是新一代高端处理器，具有高算力、低功耗、超强多媒体、丰富数据接口等特点");
+    cout << "\n********************** Enter question number or type your own question ********************\n"
          << endl;
     for (int i = 0; i < (int)pre_input.size(); i++)
     {
@@ -114,7 +112,7 @@ int main(int argc, char **argv)
     string text;
     RKLLMInput rkllm_input;
 
-    // 初始化 infer 参数结构体
+    // Initialize inference parameters
     RKLLMInferParam rkllm_infer_params;
     memset(&rkllm_infer_params, 0, sizeof(RKLLMInferParam));
     rkllm_infer_params.mode = RKLLM_INFER_GENERATE;
