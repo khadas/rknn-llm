@@ -109,8 +109,8 @@ int main(int argc, char **argv)
     }
 
     vector<string> pre_input;
-    pre_input.push_back("There are chickens and rabbits in a cage. There are 14 heads and 38 legs in total. How many chickens and rabbits are there?");
-    pre_input.push_back("28 children are standing in a row. The 10th child from the left is Xuedou. What is his position from the right?");
+    pre_input.push_back("Write a poem about snow");
+    pre_input.push_back("Each boy plants 3 trees, and each girl plants 2 trees. The total number of people is 12, and the total number of trees is 32. Find the number of men and women.");
     cout << "\n********************** Enter question number or type your own question ********************\n"
          << endl;
     for (int i = 0; i < (int)pre_input.size(); i++)

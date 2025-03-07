@@ -47,8 +47,8 @@ set(LIBRKLLMRT_INCLUDES ${RKLLM_PATH}/${CMAKE_SYSTEM_NAME}/librkllm_api/include)
 
 # llm
 include_directories(${LIBRKLLMRT_INCLUDES})
-add_executable(llm src/llm.cpp)
-target_link_libraries(llm PRIVATE ${LIBRKLLMRT})
+add_executable(llm_demo src/llm_demo.cpp)
+target_link_libraries(llm_demo PRIVATE ${LIBRKLLMRT})
 
 # llm_test
 include_directories(${LIBRKLLMRT_INCLUDES})
@@ -64,6 +64,6 @@ set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS  -Wl,--no-undefined,
 
 # Install the executable file to the specified directory
 set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR}/install/demo_${CMAKE_SYSTEM_NAME}_${TARGET_LIB_ARCH})
-install(TARGETS imgenc llm llm_test ${PROJECT_NAME} DESTINATION ./)
+install(TARGETS imgenc llm_demo llm_test ${PROJECT_NAME} DESTINATION ./)
 install(PROGRAMS ${LIBRKNNRT} ${LIBRKLLMRT} DESTINATION lib)
 install(PROGRAMS ../data/demo.jpg DESTINATION ./)
